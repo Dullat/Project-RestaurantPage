@@ -1,14 +1,14 @@
-let path = import('path');
-let HTML = import('html-webpack-plugin');
+const path = require('path');
+const HTML = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
     output: {
         filename: '[name].bundle.js',
-        path: path.reslove(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
     },
 
-    devDerver: {
+    devServer: {
         static: {
             directory: path.resolve(__dirname, 'dist')
         },
@@ -33,8 +33,9 @@ module.exports = {
 
     plugins: [
         new HTML({
-            template: './index.html',
+            template: './src/index.html',
             filename: 'index.html'
         })
-    ]
+    ],
+    mode: "development",
 }
