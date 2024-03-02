@@ -1,3 +1,65 @@
-.header {
+header {
     padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.377);
+    display: flex;
+    align-items: center;
+    padding-inline: 2rem;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+h1 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+nav {
+    margin-left: auto;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1rem, 8vw, 10rem);
+    font-weight: 600;
+}
+
+.wrapper {
+    padding: 5vw;
+}
+
+button {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 4vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(255, 255, 255);
+        border-radius: 1rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
+
+        min-width: 12rem;
+        height: 20vh;
+    }
+
+    .nav-menu[visible] {
+        display: flex;
+    }
+
+    button {
+        display: unset;
+        margin-left: auto;
+    }
+
 }
